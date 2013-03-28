@@ -6,6 +6,9 @@ var skitch = {
 		 
 					 if (filetype=="js"){ //if filename is a external JavaScript file
 					  
+					 	
+					 	/* LOAD JQUERY */
+
 					 	if(filename == "$" || filename == "jquery" || filename == "jQuery"){
 
 					  		
@@ -37,6 +40,41 @@ var skitch = {
 
 					 	}
 
+					 	/* LOAD BootStrap */
+					 	
+					 	if(filename == "bootstrap"){
+
+					  		
+					  		//EXTERNAL:
+								
+								var callback = function(){
+								    $(document).ready(function(){
+								         console.log('bootstrap');
+								         callbackFunc();
+								    });
+
+								}
+
+								if( true ){
+								    var scr = document.createElement('script');
+								    scr.src = 'http://twitter.github.com/bootstrap/assets/js/bootstrap.min.js';
+								    document.getElementsByTagName('head')[0].appendChild(scr);
+
+								    var timer = setInterval(function(){
+								        if( typeof $().modal == 'function' ){
+								            clearInterval(timer);
+								            callback();
+
+								        }        
+								    },100);
+								}
+
+
+
+					 	}
+
+					 	/* LOAD EXTERNAL JS FILE */
+
 					 	else{
 
 					 		var fileref=document.createElement('script');
@@ -46,15 +84,29 @@ var skitch = {
 
 					 }
 
+					 
 					 else if (filetype=="css"){ //if filename is an external CSS file
 					  	
 
 
 					  	if(filename == "bootstrap" ){
-						  	var fileref=document.createElement("link");
-						  	fileref.setAttribute("rel", "stylesheet");
-						  	fileref.setAttribute("type", "text/css");
-						  	fileref.setAttribute("href", "http://twitter.github.com/bootstrap/assets/js/bootstrap.min.js");
+						  	
+						  	//EXTERNAL:
+								var docy = document; // shortcut
+								var cssId = 'myCss';  // you could encode the css path itself to generate id..
+								if (!docy.getElementById(cssId))
+								{
+								    var head  = docy.getElementsByTagName('head')[0];
+								    var link  = docy.createElement('link');
+								    link.id   = cssId;
+								    link.rel  = 'stylesheet';
+								    link.type = 'text/css';
+								    link.href = 'http://twitter.github.com/bootstrap/assets/css/bootstrap.css';
+								    link.media = 'all';
+								    head.appendChild(link);
+								}
+							
+
 						}
 
 						else{
@@ -69,10 +121,6 @@ var skitch = {
 
 					 }
 
-
-					 if (typeof fileref!="undefined"){
-					  document.getElementsByTagName("head")[0].appendChild(fileref);
-					}
 
 				},
 }
