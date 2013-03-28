@@ -1,8 +1,12 @@
 
-skitch.initLibs("jquery","js");
+skitch.initLibs("jquery","js",function() {
 
-function loadReady() {
+	myRealCode();
+});
 
-	$("#button").click(function(){alert("Everything's loaded!")});
 
-}
+
+	function myRealCode(){
+
+		$("#jank").click(function(){alert("Everything's loaded!")});
+	}

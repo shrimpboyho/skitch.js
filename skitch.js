@@ -2,7 +2,7 @@ var skitch = {
 			
 	
 				
-	initLibs : function initLibs(filename, filetype){
+	initLibs : function initLibs(filename, filetype, callbackFunc){
 		 
 					 if (filetype=="js"){ //if filename is a external JavaScript file
 					  
@@ -14,7 +14,7 @@ var skitch = {
 								var callback = function(){
 								    $(document).ready(function(){
 								         console.log('jquery');
-								         loadReady();
+								         callbackFunc();
 								    });
 
 								}
