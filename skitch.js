@@ -104,8 +104,23 @@ var skitch = {
 
 				},
 
-	/* CODE FOR LOADING WEBFONTS */
+	/* CODE FOR LOADING STRING SCRIPTS */
 
+	runScript : function runScript(type,code,callbackFunc){
+		if(type=="js"){
+
+			// EXECUTE JS
+								
+				var compactCode = new Function (code); 
+				
+				compactCode();  
+
+				console.log('ran some stringed code');	
+				
+				callbackFunc();
+
+		}
+	},
 	
 }
 

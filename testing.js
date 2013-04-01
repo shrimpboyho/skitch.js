@@ -1,8 +1,5 @@
-
-
-
-
 /* Initialize all external resources */
+
 skitch.initLibs("jquery","js",function() {
 
 	skitch.initLibs('bootstrap','js',function(){
@@ -32,8 +29,15 @@ function myCodeStart(){
 		$("#jank2").modal('show');
 
 	});
-	
-	
+
+	/* Run a string script */
+
+	skitch.runScript('js',"alert('derp');$('#jank2').modal('show');",function(){
+		console("The script just ran.");
+	});
+
 
 }
+
+
 
