@@ -107,6 +107,7 @@ var skitch = {
 	/* CODE FOR LOADING STRING SCRIPTS */
 
 	runScript : function runScript(type,code,callbackFunc){
+		
 		if(type=="js"){
 
 			// EXECUTE JS
@@ -120,7 +121,19 @@ var skitch = {
 				callbackFunc();
 
 		}
-	},
+/*
+		if(type=="c"){
+
+			// TRANSLATE AND EXECUTE C CODE
+								
+				var directives = code.replace('#include <jquery>',"skitch.initLibs('jquery','js',function() { 
+													main();
+											  });");
+				var main = directives.replace('int main(){','function main(){');
+
+				alert(main);
+		}
+	*/},
 	
 }
 
