@@ -1,6 +1,6 @@
 var skitch = {
 			
-	
+	/* CODE FOR LOADING ALL CSS AND JS */
 				
 	initLibs : function initLibs(filename, filetype, callbackFunc){
 		 
@@ -49,7 +49,7 @@ var skitch = {
 								
 								var callback = function(){
 								    $(document).ready(function(){
-								         console.log('bootstrap');
+								         console.log('bootstrap js ');
 								         callbackFunc();
 								    });
 
@@ -75,12 +75,7 @@ var skitch = {
 
 					 	/* LOAD EXTERNAL JS FILE */
 
-					 	else{
-
-					 		var fileref=document.createElement('script');
-					  		fileref.setAttribute("type","text/javascript");
-					  		fileref.setAttribute("src", filename);
-					 	}
+					 	
 
 					 }
 
@@ -104,18 +99,12 @@ var skitch = {
 								    link.href = 'http://twitter.github.com/bootstrap/assets/css/bootstrap.css';
 								    link.media = 'all';
 								    head.appendChild(link);
+								    console.log('bootstrap css');
 								}
 							
 
 						}
 
-						else{
-
-					 		var fileref=document.createElement("link");
-						  	fileref.setAttribute("rel", "stylesheet");
-						  	fileref.setAttribute("type", "text/css");
-						  	fileref.setAttribute("href", filename);
-					 	}
 
 
 
@@ -123,5 +112,9 @@ var skitch = {
 
 
 				},
+
+	/* CODE FOR LOADING WEBFONTS */
+
+	
 }
 

@@ -3,19 +3,22 @@
 
 
 /* Initialize all external resources */
-
-
 skitch.initLibs("jquery","js",function() {
 
-	skitch.initLibs('bootstrap','js',function(){
+		myCodeStart();	
 
-		skitch.initLibs('bootstrap','css',function(){
+});
 
-			myCodeStart();
 
-		});
+skitch.initLibs('bootstrap','css',function(){
 
-	});
+	
+
+});
+
+skitch.initLibs('bootstrap','js',function(){
+
+	
 
 });
 
@@ -23,6 +26,14 @@ skitch.initLibs("jquery","js",function() {
 
 function myCodeStart(){
 
-	$("#jank").click(function(){alert("Everything's loaded!")});
+	$("#jank").unbind('click').click(function(){
+
+		alert("Everything's loaded!")
+		$("#jank2").modal('show');
+
+	});
+	
+	
 
 }
+
