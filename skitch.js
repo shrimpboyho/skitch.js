@@ -14,29 +14,21 @@ var skitch = {
 					  		
 					  		//EXTERNAL:
 								
-								var callback = function(){
-								    $(document).ready(function(){
-								         console.log('jquery');
-								         callbackFunc();
-								    });
+								 // adding the script tag to the head as suggested before
+								   var head = document.getElementsByTagName('head')[0];
+								   var script = document.createElement('script');
+								   script.type = 'text/javascript';
+								   script.src = 'http://code.jquery.com/jquery-latest.min.js';
 
-								}
+								   // then bind the event to the callback function 
+								   // there are several events for cross browser compatibility
+								   script.onreadystatechange = callbackFunc;
+								   script.onload = callbackFunc;
 
-								if( typeof jQuery === 'undefined' ){
-								    var scr = document.createElement('script');
-								    scr.src = 'http://code.jquery.com/jquery-latest.min.js';
-								    document.getElementsByTagName('head')[0].appendChild(scr);
+								   // fire the loading
+								   head.appendChild(script);
 
-								    var timer = setInterval(function(){
-								        if( typeof jQuery !== 'undefined' ){
-								            clearInterval(timer);
-								            callback();
-
-								        }        
-								    },100);
-								}
-
-
+								   console.log('jquery js');
 
 					 	}
 
@@ -47,27 +39,21 @@ var skitch = {
 					  		
 					  		//EXTERNAL:
 								
-								var callback = function(){
-								    $(document).ready(function(){
-								         console.log('bootstrap js ');
-								         callbackFunc();
-								    });
+							   // adding the script tag to the head as suggested before
+							   var head = document.getElementsByTagName('head')[0];
+							   var script = document.createElement('script');
+							   script.type = 'text/javascript';
+							   script.src = 'http://twitter.github.com/bootstrap/assets/js/bootstrap.min.js';
 
-								}
+							   // then bind the event to the callback function 
+							   // there are several events for cross browser compatibility
+							   script.onreadystatechange = callbackFunc;
+							   script.onload = callbackFunc;
 
-								if( true ){
-								    var scr = document.createElement('script');
-								    scr.src = 'http://twitter.github.com/bootstrap/assets/js/bootstrap.min.js';
-								    document.getElementsByTagName('head')[0].appendChild(scr);
+							   // fire the loading
+							   head.appendChild(script);
 
-								    var timer = setInterval(function(){
-								        if( typeof $().modal == 'function' ){
-								            clearInterval(timer);
-								            callback();
-
-								        }        
-								    },100);
-								}
+							   console.log('bootstrap js');
 
 
 
@@ -98,6 +84,11 @@ var skitch = {
 								    link.type = 'text/css';
 								    link.href = 'http://twitter.github.com/bootstrap/assets/css/bootstrap.css';
 								    link.media = 'all';
+								    
+
+								    link.onreadystatechange = callbackFunc;
+							   		link.onload = callbackFunc;
+
 								    head.appendChild(link);
 								    console.log('bootstrap css');
 								}

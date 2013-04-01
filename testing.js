@@ -5,22 +5,22 @@
 /* Initialize all external resources */
 skitch.initLibs("jquery","js",function() {
 
-		myCodeStart();	
+	skitch.initLibs('bootstrap','js',function(){
+
+		skitch.initLibs('bootstrap','css',function(){
+
+			myCodeStart();
+
+		});
+
+	});
+
 
 });
 
 
-skitch.initLibs('bootstrap','css',function(){
 
-	
 
-});
-
-skitch.initLibs('bootstrap','js',function(){
-
-	
-
-});
 
 /* Begin Code */
 
