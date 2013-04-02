@@ -121,19 +121,18 @@ var skitch = {
 				callbackFunc();
 
 		}
-/*
+
 		if(type=="c"){
 
 			// TRANSLATE AND EXECUTE C CODE
 								
-				var directives = code.replace('#include <jquery>',"skitch.initLibs('jquery','js',function() { 
-													main();
-											  });");
+				var directives = code.replace('#include <jquery>',"skitch.initLibs('jquery','js',function(){\nmain();\n}\n);");
 				var main = directives.replace('int main(){','function main(){');
 
-				alert(main);
+				console.log(main);
+				callbackFunc();
 		}
-	*/},
+	},
 	
 }
 
