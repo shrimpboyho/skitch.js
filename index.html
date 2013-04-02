@@ -53,7 +53,7 @@
                     <div class="nav-collapse collapse">
                         <ul class="nav">
                             <li class="active"><a href="http://shrimpboyho.github.com/skitch.js/">Home</a></li>
-                            <li><a href="#about">About</a></li>
+                            <li><a href="#" id="documentationLink">Documentation</a></li>
                             <li><a href="https://github.com/shrimpboyho/skitch.js">Source</a></li>
                             
                         </ul>
@@ -63,7 +63,7 @@
             </div>
         </div>
 
-        <div class="container">
+        <div id = "main"class="container">
 
             <!-- Main hero unit for a primary marketing message or call to action -->
             <div class="hero-unit"style="padding: 100px;">
@@ -115,6 +115,22 @@ function myCodeStart(){
 
         </div> <!-- /container -->
 
+        <!-- DOCUMETNATION -->
+
+        <div id = "documentationdiv"class="container">
+
+            <!-- Main hero unit for a primary marketing message or call to action -->
+            <div class="hero-unit"style="padding: 100px;">
+                <h1>skitch.js</h1>
+                
+                <p>Documentation</p>
+            </div>
+
+             <footer>
+                <p>&copy; Dewey 2012</p>
+            </footer>
+        </div>
+
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
 
@@ -128,6 +144,17 @@ function myCodeStart(){
             editor.setTheme("ace/theme/github");
             editor.setFontSize("16px") 
             editor.getSession().setMode("ace/mode/javascript");
+
+            $('#documentationLink').click(function(){
+
+                $('#main').hide('slow');
+                $('#documentationdiv').show('slow');
+
+
+            });
+
+
+
         </script>
     </body>
 </html>
