@@ -121,9 +121,15 @@ function myCodeStart(){
 
             <!-- Main hero unit for a primary marketing message or call to action -->
             <div class="hero-unit"style="padding: 100px;">
-                <h1>skitch.js</h1>
-                
-                <p>Documentation</p>
+                <h1>Documentation</h1>
+                    <h2>Adding skitch.js</h2>
+                        <p>Adding the skitch.js framework to your project is fairly simple. Just reference it in a script tag in the HTML. Make sure, however, that skitch.js is initialized in the HTML before your personal script which utilizes this framework.</p>
+                    <h2>Loading External Resources</h2>
+                        <p>The skitch.js framework provides a simple method of loading external resources. To make things all the easier, we have simple shorthand set up to reference popular libraries from CDNs, such as jQuery and BootStrap.</p>
+                        <h3>skitch.initLib(<i>library_name</i> , <i>library_extension </i>, <i>callback_function</i>);</h3>
+                    <h2>Working with iFrames</h2>
+                         <p>The skitch.js framework provides a simple way of controlling the content in an iFrame. There are simple methods which aid HTML, JavaScript, and CSS injection into an iFrame.</p>
+                         <h3>skitch.injectHTML(<i>iFrame_id </i>, <i>html_code_string</i> , <i>callback_function</i>);</h3>
             </div>
 
              <footer>
@@ -132,7 +138,7 @@ function myCodeStart(){
         </div>
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script> 
 
         <script src="js/vendor/bootstrap.min.js"></script>
 
