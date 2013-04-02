@@ -126,12 +126,25 @@ var skitch = {
 
 			// TRANSLATE AND EXECUTE C CODE
 								
-				var directives = code.replace('#include <jquery>',"skitch.initLibs('jquery','js',function(){\nmain();\n}\n);");
+				var directives = code.replace(/^#include\s+$<jquery>/,"skitch.initLibs('jquery','js',function(){\nmain();\n}\n);");
+				directives = code.replace(/^#include\s+$<bootstrapjs>/,"skitch.initLibs('bootstrap','js',function(){\nmain();\n}\n);");
 				var main = directives.replace('int main(){','function main(){');
+				//var otherfunctions = main.replace();
 
 				console.log(main);
 				callbackFunc();
 		}
+	},
+	
+	/* IFRAME CONTROL ELEMENTS */
+
+	injectHTML : function injectHTML(id,code,callbackFunc){
+
+		mydoc = document.getElementById(id).contentWindow.document;
+		mydoc.open();
+		mydoc.write(code); 
+		mydoc.close();
+		callbackFunc();
 	},
 	
 }

@@ -39,6 +39,13 @@ function myCodeStart(){
 		console.log("The c script just ran.");
 	});
 
+	/* INJECT an IFRAME */
+
+	skitch.injectHTML('bunz',"<textarea></textarea>",function(){
+
+		console.log("Injection worked.");
+
+	});
 
 }
 
