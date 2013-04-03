@@ -19,14 +19,17 @@
             .ace-editor{
                 font-size: 16px;
             }
+            .ace_scrollbar {
+                display: none !important;
+            }
         </style>
         <style type="text/css" media="screen">
             #editor { 
-                height: 250px;
-                top: 150px;
-                width: 43%;
-                bottom: 1px;
-                margin-left: 35%;
+                height: 290px;
+                top: 100px;
+                width: 600px;
+                bottom: 10px;
+                margin-left: 390px;
             }
         </style>
         <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
@@ -67,6 +70,7 @@
 
             <!-- Main hero unit for a primary marketing message or call to action -->
             <div class="hero-unit"style="padding: 100px;">
+                <div class="container span6">
                 <div id="editor">/* Initialize all external resources */
 skitch.initLibs("jquery","js",function() {
     skitch.initLibs('bootstrap','js',function(){
@@ -77,15 +81,16 @@ skitch.initLibs("jquery","js",function() {
 });
 /* Begin Code */
 function myCodeStart(){  
-    $("#jank").click(function(){
         alert("Everything's loaded!")
-    });
 }
 </div>
-                <h1>skitch.js</h1>
-                
-                <p>Asynchronous JavaScript and JavaScript</p>
-                <p><a href = "skitch.min.js" class="btn btn-primary btn-large">Download &raquo;</a></p>
+                </div>
+                <div class="">
+                    <h1>skitch.js</h1>
+                    
+                    <p>Asynchronous JavaScript and JavaScript</p>
+                    <p><a href = "skitch.min.js" class="btn btn-primary btn-large">Download &raquo;</a></p>
+                </div>
             </div>
 
             <!-- Example row of columns -->
