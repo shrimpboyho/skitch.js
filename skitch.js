@@ -43,7 +43,7 @@ var skitch = {
 							   var head = document.getElementsByTagName('head')[0];
 							   var script = document.createElement('script');
 							   script.type = 'text/javascript';
-							   script.src = 'http://twitter.github.com/bootstrap/assets/js/bootstrap.min.js';
+							   script.src = 'http://twitter.github.io/bootstrap/assets/js/bootstrap.min.js';
 
 							   // then bind the event to the callback function 
 							   // there are several events for cross browser compatibility
@@ -82,7 +82,7 @@ var skitch = {
 								    link.id   = cssId;
 								    link.rel  = 'stylesheet';
 								    link.type = 'text/css';
-								    link.href = 'http://twitter.github.com/bootstrap/assets/css/bootstrap.css';
+								    link.href = 'http://twitter.github.io/bootstrap/assets/css/bootstrap.css';
 								    link.media = 'all';
 								    
 
